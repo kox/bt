@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <section>
+        <header>
+          <h1 class="page-header">Input:</h1>
+        </header>
+        <body>
+          <textarea name="phrase" id="phrase" data-ng-model="phrase" cols="30" rows="10"></textarea>
+        </body>
+        <footer>
+          <button type="submit" data-ng-click="submitPhrase()">SUBMIT</button>
+        </footer>
+      </section>
+    </div>
+  </div>
+
+  <div class="row" data-ng-if="submited">
+    <div class="col-lg-12">
+      <section >
+        <header>
+          <h1 class="page-header">Output:</h1>
+        </header>
+        <div data-ng-if="err.length == 0">
+          <ul class="col-lg-12 listing header-table">
+            <li class="col-lg-1 keys" data-ng-repeat="key in solution.keys | orderBy:'toString()'">
+              <span>{{key | uppercase}}</span>
+              <div class="vertical-table" data-ng-repeat="item in solution.words[key] | orderObjectBy:'word'">
+                <span>{{item.word}}</span> <span data-ng-if="item.count > 1">({{item.count}})</span>
+              </div>
+            </li>
+          </ul>
+          <p>Words = {{solution.contwords}}</p>
+          <p>, = {{solution.comas}}</p>
+          <p>. = {{solution.fullstops}}</p>
+        </div>
+        <div data-ng-if="err.length > 0">
+          <p class="err">{{err}}</p>
+        </div>
+      </section>  
+    </div>
+  </div>
+</div>

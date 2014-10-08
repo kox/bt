@@ -1,0 +1,30 @@
+ul.listing {
+  margin: 0 0 10px 0;
+  padding: 5px 0;
+  list-style-type: none;
+}
+
+
+li.keys {
+  margin: 0;
+  padding: 3px 0 3px 0;
+  border: 1px solid black;
+
+  > span {
+    margin-left: 5px;
+  }
+}
+
+div.vertical-table  {
+  display: block;
+  padding: 5px 0;
+  border-top: 1px solid black;
+}
+
+div.vertical-table  span:first-child {
+  margin-left: 5px;
+}
+
+p.err {
+  color: red;
+}
